@@ -7,4 +7,13 @@ class DataModel with ChangeNotifier {
   List<Data> get allDataList => _allDataList;
 
   final DataRepository repo = DataRepository();
+
+  DataModel() {
+    _fetchAll();
+  }
+
+  void _fetchAll() async {
+    _allDataList = await repo.getAllData();
+    notifyListeners();
+  }
 }
