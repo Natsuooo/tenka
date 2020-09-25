@@ -77,15 +77,16 @@ class DataListTile extends StatelessWidget {
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),
-                      trailing: IconButton(
-                        iconSize: 28,
-                        icon: starModel.isStar(_id)
-                            ? Icon(Icons.star, color: Colors.yellow[700])
-                            : Icon(Icons.star_border, color: Colors.black38),
-                        onPressed: () {
-                          starModel.toggleStar(_id);
-                          print(starList);
-                        },
+                      trailing: Consumer<StarModel>(
+                        builder: (context, starList, _) => IconButton(
+                          iconSize: 28,
+                          icon: starModel.isStar(_id)
+                              ? Icon(Icons.star, color: Colors.yellow[700])
+                              : Icon(Icons.star_border, color: Colors.black38),
+                          onPressed: () {
+                            starModel.toggleStar(_id);
+                          },
+                        ),
                       ),
                     ),
                   ),
