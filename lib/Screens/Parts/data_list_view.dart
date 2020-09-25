@@ -29,13 +29,8 @@ class DataListView extends StatelessWidget {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
         (context, index) {
-          return GestureDetector(
-            behavior: HitTestBehavior.opaque,
-            onPanDown: (details) => FocusScope.of(context).unfocus(),
-            child: Container(
-              child: Text(list[index].name),
-            ),
-          );
+          var data = list[index];
+          return DataListTile(data: data);
         },
         childCount: list == null ? 0 : list.length,
       ),
