@@ -4,6 +4,7 @@ import 'package:tenka_2_0_0/Model/bottom_navigation_model.dart';
 import 'package:tenka_2_0_0/Screens/main_bottom_navigation.dart';
 import 'package:tenka_2_0_0/Model/data_model.dart';
 import 'package:tenka_2_0_0/Model/search_model.dart';
+import 'package:tenka_2_0_0/Model/star_model.dart';
 
 void main() => runApp(MyApp());
 
@@ -20,6 +21,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider<SearchModel>(
           create: (context) => SearchModel(),
+        ),
+        ChangeNotifierProvider<StarModel>(
+          create: (context) => StarModel(),
         )
       ],
       child: MaterialApp(

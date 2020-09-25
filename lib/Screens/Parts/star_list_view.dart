@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tenka_2_0_0/Entity/data.dart';
 import 'package:tenka_2_0_0/Screens/Parts/data_list_tile.dart';
-import 'package:tenka_2_0_0/Model/search_model.dart';
 import 'package:provider/provider.dart';
+import 'package:tenka_2_0_0/Model/star_model.dart';
 
 class StarListView extends StatelessWidget {
   final List<Data> list;
@@ -13,13 +13,13 @@ class StarListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final searchModel = Provider.of<SearchModel>(context, listen: true);
+    final starModel = Provider.of<StarModel>(context, listen: true);
     return SliverList(
       delegate: SliverChildBuilderDelegate(
         (context, index) {
           var data = list[index];
-          List<int> starList = [0, 1, 2];
-          if (starList.contains(data.id)) {
+          List<String> starList = starModel.starList;
+          if (starList.contains(data.id.toString())) {
             return DataListTile(data: data);
           } else {
             return Container();
