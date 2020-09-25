@@ -13,7 +13,6 @@ class DataModel with ChangeNotifier {
   }
 
   void _fetchAll() async {
-    print('called');
     _allDataList = await repo.getAllData();
     notifyListeners();
   }

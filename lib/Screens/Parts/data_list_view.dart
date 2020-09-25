@@ -11,19 +11,34 @@ class DataListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (list.isEmpty) {
-      print('empy');
-      return Center(
-        child: Text('NO ITEM'),
-      );
-    }
+    // if (list.isEmpty) {
+    //   print('empty');
+    //   return Center(
+    //     child: Text('NO ITEM'),
+    //   );
+    // }
 
-    return ListView.builder(
-      itemBuilder: (BuildContext context, int index) {
-        var data = list[index];
-        return DataListTile(data: data);
-      },
-      itemCount: list.length,
+    // return ListView.builder(
+    //   itemBuilder: (BuildContext context, int index) {
+    //     var data = list[index];
+    //     return DataListTile(data: data);
+    //   },
+    //   itemCount: list.length,
+    // );
+
+    return SliverList(
+      delegate: SliverChildBuilderDelegate(
+        (context, index) {
+          return GestureDetector(
+            behavior: HitTestBehavior.opaque,
+            onPanDown: (details) => FocusScope.of(context).unfocus(),
+            child: Container(
+              child: Text(list[index].name),
+            ),
+          );
+        },
+        childCount: list == null ? 0 : list.length,
+      ),
     );
   }
 }
