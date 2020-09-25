@@ -11,7 +11,7 @@ class StarDao {
     }
   }
 
-  Future insertStarList(List<String> starList) async {
+  Future addStarList(List<String> starList) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     if (prefs.containsKey('starList')) {
       prefs.setStringList('starList', starList);

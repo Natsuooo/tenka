@@ -5,6 +5,14 @@ class StarModel with ChangeNotifier {
   List<String> _starList = [];
   List<String> get starList => _starList;
 
+  bool _isStar = false;
+  bool get isStar => _isStar;
+
+  void changeStar() async {
+    _isStar = !_isStar;
+    notifyListeners();
+  }
+
   final StarRepository repo = StarRepository();
 
   StarModel() {
@@ -16,8 +24,8 @@ class StarModel with ChangeNotifier {
     notifyListeners();
   }
 
-  // void add(String star) async {
-  //   await repo.insertStarList(star);
-  //   _fetchAll();
-  // }
+  void addStarList(List<String> starList) async {
+    await repo.addStarList(starList);
+    _fetchAll();
+  }
 }

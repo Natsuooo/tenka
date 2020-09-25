@@ -14,12 +14,13 @@ class DataListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final starModel = Provider.of<StarModel>(context, listen: true);
-    bool isStar = false;
 
     List<String> starList = starModel.starList;
 
-    if (starList.contains(data.id.toString())) {
-      isStar = true;
+    String _id = data.id.toString();
+
+    if (starList.contains(_id)) {
+      starModel.changeStar();
     }
 
     _cardColor() {
@@ -36,20 +37,6 @@ class DataListTile extends StatelessWidget {
 
         default:
           return Colors.green[600];
-      }
-    }
-
-    _starIcon() {
-      if (isStar == true) {
-        return Icon(
-          Icons.star,
-          color: Colors.yellow[700],
-        );
-      } else {
-        return Icon(
-          Icons.star_border,
-          color: Colors.black38,
-        );
       }
     }
 
@@ -96,8 +83,21 @@ class DataListTile extends StatelessWidget {
                       ),
                       trailing: IconButton(
                         iconSize: 28,
-                        icon: _starIcon(),
-                        onPressed: () {},
+                        icon: starModel.isStar == true
+                            ? Icon(Icons.star, color: Colors.yellow[700])
+                            : Icon(Icons.star_border, color: Colors.black38),
+                        onPressed: () {
+                          if (starModel.isStar == false) {
+                            starModel.changeStar();
+                            starList.add(_id);
+                            print(starList);
+                            starModel.addStarList(starList);
+                          } else {
+                            print(false);
+                            // starList.remove(_id);
+                            // starModel.removeStarList(StarList);
+                          }
+                        },
                       ),
                     ),
                   ),
