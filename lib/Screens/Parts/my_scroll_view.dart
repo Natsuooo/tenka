@@ -3,7 +3,7 @@ import 'package:tenka_2_0_0/Screens/Parts/data_list_view.dart';
 import 'package:tenka_2_0_0/Model/data_model.dart';
 import 'package:provider/provider.dart';
 import 'package:tenka_2_0_0/Screens/Parts/title_bar.dart';
-import 'package:tenka_2_0_0/Screens/Parts/my_header.dart';
+import 'package:tenka_2_0_0/Screens/Parts/search_bar.dart';
 
 class MyScrollView extends StatelessWidget {
   MyScrollView({Key key}) : super(key: key);
@@ -14,7 +14,7 @@ class MyScrollView extends StatelessWidget {
     return CustomScrollView(
       slivers: [
         TitleBar(title: 'Tenka'),
-        MyHeader(),
+        SearchBar(),
         DataListView(list: model.allDataList),
       ],
     );

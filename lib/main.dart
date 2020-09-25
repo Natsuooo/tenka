@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:tenka_2_0_0/Model/bottom_navigation_model.dart';
 import 'package:tenka_2_0_0/Screens/main_bottom_navigation.dart';
 import 'package:tenka_2_0_0/Model/data_model.dart';
+import 'package:tenka_2_0_0/Model/search_model.dart';
 
 void main() => runApp(MyApp());
 
@@ -17,6 +18,9 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<DataModel>(
           create: (context) => DataModel(),
         ),
+        ChangeNotifierProvider<SearchModel>(
+          create: (context) => SearchModel(),
+        )
       ],
       child: MaterialApp(
         title: 'Tenka',

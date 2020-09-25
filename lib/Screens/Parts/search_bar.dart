@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:tenka_2_0_0/Model/search_model.dart';
+import 'package:provider/provider.dart';
 
-class MyHeader extends StatelessWidget {
-  MyHeader({Key key}) : super(key: key);
+class SearchBar extends StatelessWidget {
+  SearchBar({Key key}) : super(key: key);
   TextEditingController editingController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+    final searchModel = Provider.of<SearchModel>(context, listen: true);
     return SliverPersistentHeader(
       pinned: true,
       delegate: SliverHeaderDelegate(
@@ -18,7 +21,7 @@ class MyHeader extends StatelessWidget {
             borderRadius: BorderRadius.circular(30.0),
             child: TextField(
               onChanged: (value) {
-                // setState(() {});
+                searchModel.changeQuery(value);
               },
               controller: editingController,
               decoration: InputDecoration(
