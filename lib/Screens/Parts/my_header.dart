@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class MyHeader extends StatelessWidget {
   MyHeader({Key key}) : super(key: key);
+  TextEditingController editingController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,7 @@ class MyHeader extends StatelessWidget {
               onChanged: (value) {
                 // setState(() {});
               },
-              // controller: editingController,
+              controller: editingController,
               decoration: InputDecoration(
                 hintText: "添加物を検索",
                 prefixIcon: Icon(Icons.search),

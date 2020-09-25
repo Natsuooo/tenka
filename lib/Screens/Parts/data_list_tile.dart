@@ -11,10 +11,44 @@ class DataListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isStar = true;
+
+    _cardColor() {
+      switch (data.danger) {
+        case 1:
+          return Colors.green[600];
+          break;
+        case 2:
+          return Colors.yellow[700];
+          break;
+        case 3:
+          return Colors.red[600];
+          break;
+
+        default:
+          return Colors.green[600];
+      }
+    }
+
+    _starIcon() {
+      if (isStar == true) {
+        return Icon(
+          Icons.star,
+          color: Colors.yellow[700],
+        );
+      } else {
+        return Icon(
+          Icons.star_border,
+          color: Colors.black38,
+        );
+      }
+    }
+
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
       onPanDown: (details) => FocusScope.of(context).unfocus(),
       child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 2.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -23,7 +57,7 @@ class DataListTile extends StatelessWidget {
               child: Card(
                 shape: Border(
                   left: BorderSide(
-                    color: Colors.green,
+                    color: _cardColor(),
                     width: 5,
                   ),
                 ),
@@ -34,17 +68,27 @@ class DataListTile extends StatelessWidget {
                   onTap: () async {},
                   child: Container(
                     child: ListTile(
-                      contentPadding: EdgeInsets.only(),
+                      contentPadding: EdgeInsets.only(
+                          left: 15, top: 0, bottom: 0, right: 5),
                       title: Padding(
-                        padding: EdgeInsets.only(),
+                        padding: EdgeInsets.only(left: 5),
                         child: Text(
                           data.name,
                           style: TextStyle(fontSize: 18),
                         ),
                       ),
                       subtitle: Padding(
-                        padding: EdgeInsets.only(),
-                        child: Text(data.content),
+                        padding: EdgeInsets.only(left: 5, top: 3),
+                        child: Text(
+                          data.content,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                      trailing: IconButton(
+                        iconSize: 28,
+                        icon: _starIcon(),
+                        onPressed: () {},
                       ),
                     ),
                   ),

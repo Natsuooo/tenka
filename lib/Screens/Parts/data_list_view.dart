@@ -11,21 +11,6 @@ class DataListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // if (list.isEmpty) {
-    //   print('empty');
-    //   return Center(
-    //     child: Text('NO ITEM'),
-    //   );
-    // }
-
-    // return ListView.builder(
-    //   itemBuilder: (BuildContext context, int index) {
-    //     var data = list[index];
-    //     return DataListTile(data: data);
-    //   },
-    //   itemCount: list.length,
-    // );
-
     return SliverList(
       delegate: SliverChildBuilderDelegate(
         (context, index) {
