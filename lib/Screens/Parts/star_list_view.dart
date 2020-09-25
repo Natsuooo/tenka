@@ -4,9 +4,9 @@ import 'package:tenka_2_0_0/Screens/Parts/data_list_tile.dart';
 import 'package:tenka_2_0_0/Model/search_model.dart';
 import 'package:provider/provider.dart';
 
-class DataListView extends StatelessWidget {
+class StarListView extends StatelessWidget {
   final List<Data> list;
-  const DataListView({
+  const StarListView({
     Key key,
     @required this.list,
   }) : super(key: key);
@@ -18,8 +18,8 @@ class DataListView extends StatelessWidget {
       delegate: SliverChildBuilderDelegate(
         (context, index) {
           var data = list[index];
-          String query = searchModel.query;
-          if (data.name.contains(query)) {
+          List<int> starList = [0, 1, 2];
+          if (starList.contains(data.id)) {
             return DataListTile(data: data);
           } else {
             return Container();
