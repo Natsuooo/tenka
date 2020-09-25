@@ -12,6 +12,7 @@ class DataListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (list.isEmpty) {
+      print('empy');
       return Center(
         child: Text('NO ITEM'),
       );
