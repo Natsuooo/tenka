@@ -5,5 +5,5 @@ class StarRepository {
 
   Future getStarList() => starDao.getStarList();
 
-  Future addStarList(List<String> starList) => starDao.addStarList(starList);
+  Future saveStarList(List<String> starList) => starDao.saveStarList(starList);
 }

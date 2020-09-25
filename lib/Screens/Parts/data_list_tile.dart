@@ -19,10 +19,6 @@ class DataListTile extends StatelessWidget {
 
     String _id = data.id.toString();
 
-    if (starList.contains(_id)) {
-      starModel.changeStar();
-    }
-
     _cardColor() {
       switch (data.danger) {
         case 1:
@@ -83,20 +79,12 @@ class DataListTile extends StatelessWidget {
                       ),
                       trailing: IconButton(
                         iconSize: 28,
-                        icon: starModel.isStar == true
+                        icon: starModel.isStar(_id)
                             ? Icon(Icons.star, color: Colors.yellow[700])
                             : Icon(Icons.star_border, color: Colors.black38),
                         onPressed: () {
-                          if (starModel.isStar == false) {
-                            starModel.changeStar();
-                            starList.add(_id);
-                            print(starList);
-                            starModel.addStarList(starList);
-                          } else {
-                            print(false);
-                            // starList.remove(_id);
-                            // starModel.removeStarList(StarList);
-                          }
+                          starModel.toggleStar(_id);
+                          print(starList);
                         },
                       ),
                     ),

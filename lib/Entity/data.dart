@@ -10,6 +10,8 @@ class Data {
   String food;
   String content;
 
+  bool isStar = false;
+
   Data({
     this.id,
     this.name,
@@ -35,4 +37,8 @@ class Data {
         food: data['food'],
         content: data['content'],
       );
+
+  void toggleStar() {
+    isStar = !isStar;
+  }
 }
