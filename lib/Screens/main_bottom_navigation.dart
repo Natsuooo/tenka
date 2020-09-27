@@ -15,7 +15,7 @@ class MainBottomNavigation extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
-            icon: Icon(MyFlutterApp.home__2_),
+            icon: Icon(MyFlutterApp.home_1),
             title: Text('ホーム'),
           ),
           BottomNavigationBarItem(

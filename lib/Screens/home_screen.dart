@@ -14,7 +14,6 @@ class HomeScreen extends StatelessWidget {
     dataModel.fetchAll(); //毎回fetch allはヤバくない？
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.only(top: 15, bottom: 0),
         child: CustomScrollView(
           slivers: [
             TitleBar(title: 'Tenka'),

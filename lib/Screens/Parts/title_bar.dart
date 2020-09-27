@@ -12,6 +12,7 @@ class TitleBar extends StatelessWidget {
       elevation: 0.0,
       backgroundColor: Colors.grey[100],
       flexibleSpace: FlexibleSpaceBar(
+        titlePadding: EdgeInsets.only(bottom: 6),
         centerTitle: true,
         title: Text(
           this.title,
