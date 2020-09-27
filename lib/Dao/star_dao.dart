@@ -13,8 +13,8 @@ class StarDao {
 
   Future saveStarList(List<String> starList) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    if (prefs.containsKey('starList')) {
-      prefs.setStringList('starList', starList);
-    }
+    // if (prefs.containsKey('starList')) {
+    prefs.setStringList('starList', starList);
+    // }
   }
 }

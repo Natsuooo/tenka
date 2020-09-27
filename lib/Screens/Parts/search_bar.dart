@@ -3,8 +3,9 @@ import 'package:tenka_2_0_0/Model/search_model.dart';
 import 'package:provider/provider.dart';
 
 class SearchBar extends StatelessWidget {
+  // final _formKey = GlobalKey<FormState>();
   SearchBar({Key key}) : super(key: key);
-  TextEditingController editingController = TextEditingController();
+  TextEditingController editingController = TextEditingController(text: '');
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +24,7 @@ class SearchBar extends StatelessWidget {
               onChanged: (value) {
                 searchModel.changeQuery(value);
               },
+              autofocus: false,
               controller: editingController,
               decoration: InputDecoration(
                 hintText: "添加物を検索",

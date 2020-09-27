@@ -11,9 +11,10 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dataModel = Provider.of<DataModel>(context, listen: true);
-    dataModel.fetchAll();
+    dataModel.fetchAll(); //毎回fetch allはヤバくない？
     return Scaffold(
       body: Container(
+        padding: EdgeInsets.only(top: 15, bottom: 0),
         child: CustomScrollView(
           slivers: [
             TitleBar(title: 'Tenka'),

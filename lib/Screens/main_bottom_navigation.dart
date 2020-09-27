@@ -18,7 +18,7 @@ class MainBottomNavigation extends StatelessWidget {
             title: Text('ホーム'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.star),
+            icon: Icon(Icons.star_border),
             title: Text('スター'),
           ),
         ],

@@ -33,6 +33,6 @@ class StarModel with ChangeNotifier {
 
   void saveStarList(List<String> starList) async {
     await repo.saveStarList(starList);
-    _fetchAll();
+    // _fetchAll();
   }
 }

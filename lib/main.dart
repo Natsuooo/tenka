@@ -5,6 +5,7 @@ import 'package:tenka_2_0_0/Screens/main_bottom_navigation.dart';
 import 'package:tenka_2_0_0/Model/data_model.dart';
 import 'package:tenka_2_0_0/Model/search_model.dart';
 import 'package:tenka_2_0_0/Model/star_model.dart';
+import 'package:tenka_2_0_0/Screens/detail_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -34,6 +35,9 @@ class MyApp extends StatelessWidget {
           // backgroundColor: Colors.grey[100],
         ),
         home: MainBottomNavigation(),
+        routes: {
+          '/detail': (context) => DetailScreen(),
+        },
       ),
     );
   }

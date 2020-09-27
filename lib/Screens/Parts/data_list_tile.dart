@@ -13,7 +13,7 @@ class DataListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final starModel = Provider.of<StarModel>(context, listen: true);
+    final starModel = Provider.of<StarModel>(context, listen: false);
 
     List<String> starList = starModel.starList;
 
@@ -57,7 +57,20 @@ class DataListTile extends StatelessWidget {
                 elevation: 10,
                 shadowColor: Colors.black.withOpacity(0.3),
                 child: InkWell(
-                  onTap: () async {},
+                  onTap: () async {
+                    await Navigator.of(context).pushNamed(
+                      '/detail', //idだけ渡して検索してもいいかも．
+                      arguments: {
+                        'id': data.id,
+                        'name': data.name,
+                        'category': data.category,
+                        'danger': data.danger,
+                        'enumber': data.enumber,
+                        'food': data.food,
+                        'content': data.content,
+                      },
+                    );
+                  },
                   child: Container(
                     child: ListTile(
                       contentPadding: EdgeInsets.only(
