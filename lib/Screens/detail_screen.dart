@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:provider/provider.dart';
+import 'package:tenka_2_0_0/Model/star_model.dart';
 
 class DetailScreen extends StatelessWidget {
   DetailScreen({Key key}) : super(key: key);
@@ -10,7 +12,7 @@ class DetailScreen extends StatelessWidget {
     args = ModalRoute.of(context).settings.arguments;
 
     return Scaffold(
-      appBar: _Bar(),
+      appBar: _Bar(context, args['id'].toString()),
       body: Container(
         child: SingleChildScrollView(
           child: Column(
@@ -24,7 +26,9 @@ class DetailScreen extends StatelessWidget {
   }
 }
 
-Widget _Bar() {
+Widget _Bar(context, id) {
+  final starModel = Provider.of<StarModel>(context, listen: false);
+  List<String> starList = starModel.starList;
   return AppBar(
     backgroundColor: Colors.transparent,
     elevation: 0.0,
@@ -33,12 +37,18 @@ Widget _Bar() {
         CupertinoIcons.back,
         color: Colors.black,
       ),
-      // onPressed: () => Navigator.of(context).pop(),
+      onPressed: () => Navigator.of(context).pop(),
     ),
     actions: <Widget>[
-      IconButton(
-        icon: Icon(Icons.star),
-        onPressed: () {},
+      Consumer<StarModel>(
+        builder: (context, starList, _) => IconButton(
+          icon: starModel.isStar(id)
+              ? Icon(Icons.star, color: Colors.yellow[700])
+              : Icon(Icons.star_border, color: Colors.black38),
+          onPressed: () {
+            starModel.toggleStar(id);
+          },
+        ),
       ),
     ],
   );
