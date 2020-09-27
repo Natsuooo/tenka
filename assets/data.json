@@ -1,7 +1,7 @@
 [
-    {"id": 0, "name": "abcdefg", "katakana": "アミノサン", "hiragana": "あみのさん", "alphabet": "aminosan", "category": "発色剤", "danger": 1, "enumber": "E342", "food": "パン・ベーコン・ハム", "content": "発ガン性物質を含む可能性あり"},
-    {"id": 1, "name": "bcdfefg", "katakana": "アミノサン", "hiragana": "あみのさん", "alphabet": "aminosan", "category": "発色剤", "danger": 2, "enumber": "E342", "food": "パン・ベーコン・ハム", "content": "発ガン性物質を含む可能性あり"},
-    {"id": 2, "name": "cdefghi", "katakana": "アミノサン", "hiragana": "あみのさん", "alphabet": "aminosan", "category": "発色剤", "danger": 3, "enumber": "E342", "food": "パン・ベーコン・ハム", "content": "発ガン性物質を含む可能性あり"},
+    {"id": 0, "name": "abcdefg", "katakana": "abcdefg", "hiragana": "abcdefg", "alphabet": "abcdefg", "category": "発色剤", "danger": 1, "enumber": "E342", "food": "パン・ベーコン・ハム", "content": "発ガン性物質を含む可能性あり"},
+    {"id": 1, "name": "bcdfefg", "katakana": "bcdfefg", "hiragana": "bcdfefg", "alphabet": "bcdfefg", "category": "発色剤", "danger": 2, "enumber": "E342", "food": "パン・ベーコン・ハム", "content": "発ガン性物質を含む可能性あり"},
+    {"id": 2, "name": "cdefghi", "katakana": "cdefghi", "hiragana": "cdefghi", "alphabet": "cdefghi", "category": "発色剤", "danger": 3, "enumber": "E342", "food": "パン・ベーコン・ハム", "content": "発ガン性物質を含む可能性あり"},
     {"id": 3, "name": "アミノ酸", "katakana": "アミノサン", "hiragana": "あみのさん", "alphabet": "aminosan", "category": "発色剤", "danger": 1, "enumber": "E342", "food": "パン・ベーコン・ハム", "content": "発ガン性物質を含む可能性あり"},
     {"id": 4, "name": "アミノ酸", "katakana": "アミノサン", "hiragana": "あみのさん", "alphabet": "aminosan", "category": "発色剤", "danger": 2, "enumber": "E342", "food": "パン・ベーコン・ハム", "content": "発ガン性物質を含む可能性あり"},
     {"id": 5, "name": "アミノ酸", "katakana": "アミノサン", "hiragana": "あみのさん", "alphabet": "aminosan", "category": "発色剤", "danger": 3, "enumber": "E342", "food": "パン・ベーコン・ハム", "content": "発ガン性物質を含む可能性あり"},

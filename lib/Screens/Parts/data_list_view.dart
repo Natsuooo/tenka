@@ -19,7 +19,10 @@ class DataListView extends StatelessWidget {
         (context, index) {
           var data = list[index];
           String query = searchModel.query;
-          if (data.name.contains(query)) {
+          if (data.name.contains(query) |
+              data.katakana.contains(query) |
+              data.hiragana.contains(query) |
+              data.alphabet.contains(query)) {
             return DataListTile(data: data);
           } else {
             return Container();
