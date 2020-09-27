@@ -28,9 +28,14 @@ class SearchBar extends StatelessWidget {
               // controller: editingController,
               decoration: InputDecoration(
                 hintText: "添加物を検索",
-                prefixIcon: Icon(Icons.search),
-                border: OutlineInputBorder(
+                prefixIcon: Icon(Icons.search, color: Colors.grey[700]),
+                enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                  borderSide: BorderSide(color: Colors.grey),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                  borderSide: BorderSide(color: Colors.grey),
                 ),
               ),
             ),
