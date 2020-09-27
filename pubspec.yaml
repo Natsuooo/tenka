@@ -46,6 +46,14 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
+  fonts:
+    - family: DancingScript
+      fonts:
+      - asset: fonts/DancingScript-Regular.ttf
+      - asset: fonts/DancingScript-Bold.ttf
+      - asset: fonts/DancingScript-Medium.ttf
+      - asset: fonts/DancingScript-SemiBold.ttf
+
   assets:
     - assets/
 
