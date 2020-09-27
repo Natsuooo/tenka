@@ -35,7 +35,7 @@ class SearchBar extends StatelessWidget {
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                  borderSide: BorderSide(color: Colors.grey),
+                  borderSide: BorderSide(color: Colors.black, width: 1),
                 ),
               ),
             ),
@@ -67,8 +67,8 @@ class SliverHeaderDelegate extends SliverPersistentHeaderDelegate {
   bool shouldRebuild(SliverPersistentHeaderDelegate _) => true;
 
   @override
-  double get maxExtent => 75.0;
+  double get maxExtent => 70.0;
 
   @override
-  double get minExtent => 75.0;
+  double get minExtent => 70.0;
 }

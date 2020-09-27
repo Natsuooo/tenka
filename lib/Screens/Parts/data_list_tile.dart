@@ -40,7 +40,7 @@ class DataListTile extends StatelessWidget {
       behavior: HitTestBehavior.opaque,
       onPanDown: (details) => FocusScope.of(context).unfocus(),
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 2.0),
+        padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 2.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -73,17 +73,16 @@ class DataListTile extends StatelessWidget {
                   },
                   child: Container(
                     child: ListTile(
-                      contentPadding: EdgeInsets.only(
-                          left: 15, top: 0, bottom: 0, right: 5),
+                      contentPadding: EdgeInsets.only(left: 15, right: 5),
                       title: Padding(
-                        padding: EdgeInsets.only(left: 5),
+                        padding: EdgeInsets.only(top: 0, left: 5),
                         child: Text(
                           data.name,
                           style: TextStyle(fontSize: 18),
                         ),
                       ),
                       subtitle: Padding(
-                        padding: EdgeInsets.only(left: 5, top: 3),
+                        padding: EdgeInsets.only(left: 5, top: 5),
                         child: Text(
                           data.content,
                           maxLines: 1,
