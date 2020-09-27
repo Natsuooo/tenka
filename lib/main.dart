@@ -31,8 +31,8 @@ class MyApp extends StatelessWidget {
         title: 'Tenka',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primarySwatch: Colors.green,
-          // backgroundColor: Colors.grey[100],
+          primaryColor: Colors.grey[50],
+          backgroundColor: Colors.grey[500],
         ),
         home: MainBottomNavigation(),
         routes: {

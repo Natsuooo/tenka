@@ -10,7 +10,7 @@ class TitleBar extends StatelessWidget {
       pinned: true,
       floating: false,
       elevation: 0.0,
-      backgroundColor: Colors.grey[100],
+      // backgroundColor: Colors.grey[100],
       flexibleSpace: FlexibleSpaceBar(
         titlePadding: EdgeInsets.only(bottom: 6),
         centerTitle: true,
@@ -26,12 +26,15 @@ class TitleBar extends StatelessWidget {
         ),
       ),
       actions: [
-        IconButton(
-          icon: Icon(
-            Icons.more_vert,
-            color: Colors.grey[700],
+        Visibility(
+          child: IconButton(
+            icon: Icon(
+              Icons.more_vert,
+              color: Colors.grey[700],
+            ),
+            onPressed: () {},
           ),
-          onPressed: () {},
+          visible: this.title == 'Tenka',
         ),
       ],
     );

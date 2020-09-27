@@ -14,11 +14,11 @@ class SearchBar extends StatelessWidget {
       pinned: true,
       delegate: SliverHeaderDelegate(
         child: Container(
-          color: Colors.grey[100],
+          color: Colors.grey[50],
           padding: EdgeInsets.only(right: 10, left: 10, bottom: 10),
           child: Material(
             elevation: 10.0,
-            shadowColor: Colors.black.withOpacity(0.3),
+            shadowColor: Colors.grey.withOpacity(0.2),
             borderRadius: BorderRadius.circular(30.0),
             child: TextField(
               onChanged: (value) {
