@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 class SearchBar extends StatelessWidget {
   // final _formKey = GlobalKey<FormState>();
   SearchBar({Key key}) : super(key: key);
-  TextEditingController editingController = TextEditingController(text: '');
+  // TextEditingController editingController = TextEditingController(text: '');
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class SearchBar extends StatelessWidget {
                 searchModel.changeQuery(value);
               },
               autofocus: false,
-              controller: editingController,
+              // controller: editingController,
               decoration: InputDecoration(
                 hintText: "添加物を検索",
                 prefixIcon: Icon(Icons.search),
