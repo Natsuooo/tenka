@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
 import 'package:tenka_2_0_0/Model/star_model.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:tenka_2_0_0/my_flutter_app_icons.dart';
+import 'package:tenka_2_0_0/Model/memo_model.dart';
 
 class DetailScreen extends StatelessWidget {
   DetailScreen({Key key}) : super(key: key);
@@ -21,6 +23,8 @@ class DetailScreen extends StatelessWidget {
               _title(args['name'], args['danger']),
               _table(args),
               _more(args['name']),
+              _memoTitle(args['id'], context),
+              _memoCard('まだメモはありません．'),
             ],
           ),
         ),
@@ -251,6 +255,76 @@ class DetailScreen extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _memoTitle(id, context) {
+    return Container(
+      padding: EdgeInsets.only(left: 30, right: 30, top: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text('Myメモ'),
+          OutlineButton.icon(
+            icon: Icon(
+              MyFlutterApp.edit,
+              size: 20,
+              color: Colors.black,
+            ),
+            label: Text("編集"),
+            onPressed: () {
+              Navigator.of(context).pushNamed('/memo', arguments: id);
+              // showDialog(
+              //     context: context,
+              //     builder: (BuildContext context) {
+              //       final memoModel =
+              //           Provider.of<MemoModel>(context, listen: true);
+              //       final memoEditingController = TextEditingController();
+              //       return SimpleDialog(
+              //         title: Text('Myメモ'),
+              //         contentPadding: EdgeInsets.all(16),
+              //         children: [
+              //           TextField(
+              //             controller: memoEditingController,
+              //             decoration: InputDecoration(
+              //                 border: OutlineInputBorder(),
+              //                 hintText: "メモを記入する"),
+              //           ),
+              //           FlatButton(
+              //             onPressed: () {
+              //               Navigator.pop(context);
+              //             },
+              //             child: Text("保存"),
+              //           ),
+              //         ],
+              //       );
+              // }
+              // );
+            },
+            borderSide: BorderSide(width: 1.0, color: Colors.grey[700]),
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _memoCard(String memo) {
+    return Container(
+      padding: EdgeInsets.only(left: 20, right: 20, bottom: 50),
+      child: Row(
+        children: [
+          Expanded(
+            child: Card(
+              child: Container(
+                padding: EdgeInsets.all(16),
+                child: Text(memo),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

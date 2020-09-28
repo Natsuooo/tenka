@@ -7,4 +7,24 @@ class MemoModel with ChangeNotifier {
   List<Memo> get memoList => _memoList;
 
   final MemoRepository repo = MemoRepository();
+
+  getMemo(int id) async {
+    await repo.getMemo(id);
+    notifyListeners();
+  }
+
+  void add(Memo memo) async {
+    await repo.insertMemo(memo);
+    notifyListeners();
+  }
+
+  void update(Memo memo) async {
+    await repo.updateMemo(memo);
+    notifyListeners();
+  }
+
+  void remove(Memo memo) async {
+    await repo.deleteMemo(memo.id);
+    notifyListeners();
+  }
 }

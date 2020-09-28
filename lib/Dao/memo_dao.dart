@@ -5,6 +5,14 @@ class MemoDao {
   final dbProvider = DatabaseService.dbProvider;
   final tableName = DatabaseService.memoTableName;
 
+  Future<List<Memo>> getMemo(int id) async {
+    final db = await dbProvider.database;
+    // List<Memo> result = db.query(
+    //   tableName,
+
+    // );
+  }
+
   Future<int> create(Memo memo) async {
     final db = await dbProvider.database;
     var result = db.insert(tableName, memo.toDatabaseJson());
