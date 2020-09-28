@@ -5,12 +5,14 @@ class MemoDao {
   final dbProvider = DatabaseService.dbProvider;
   final tableName = DatabaseService.memoTableName;
 
-  Future<List<Memo>> getMemo(int id) async {
+  Future<dynamic> getMemo(int id) async {
     final db = await dbProvider.database;
-    // List<Memo> result = db.query(
-    //   tableName,
-
-    // );
+    List<Map<String, dynamic>> result =
+        await db.query(tableName, where: "id = ?", whereArgs: [id], limit: 1);
+    List<Memo> memo = result.isNotEmpty
+        ? result.map((item) => Memo.fromDatabaseJson(item)).toList()
+        : [];
+    return memo;
   }
 
   Future<int> create(Memo memo) async {

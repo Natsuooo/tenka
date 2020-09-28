@@ -9,8 +9,10 @@ class MemoModel with ChangeNotifier {
   final MemoRepository repo = MemoRepository();
 
   getMemo(int id) async {
-    await repo.getMemo(id);
-    notifyListeners();
+    _memoList = await repo.getMemo(id);
+    // print("$_memoList getmemo");
+    // return _memoList;
+    // notifyListeners();
   }
 
   void add(Memo memo) async {

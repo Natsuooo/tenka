@@ -34,9 +34,8 @@ class DatabaseService {
   void initDB(Database database, int version) async {
     await database.execute('''
       CREATE TABLE $memoTableName (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        data_id INTEGER NOT NULL,
-        text TEXT NOT NULL,
+        id INTEGER PRIMARY KEY,
+        text TEXT NOT NULL
       )
     ''');
   }

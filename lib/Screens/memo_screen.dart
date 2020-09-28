@@ -25,13 +25,15 @@ class MemoScreen extends StatelessWidget {
             color: Colors.black,
           ),
           onPressed: () {
-            memoModel.add(Memo(dataId: id, text: memoEditingController.text));
+            memoModel.add(Memo(id: id, text: 'テスト'));
             Navigator.of(context).pop();
           },
         ),
         actions: [
           FlatButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
             child: Icon(Icons.check),
             shape: CircleBorder(side: BorderSide(color: Colors.transparent)),
           ),

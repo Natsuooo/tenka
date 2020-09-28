@@ -5,6 +5,8 @@ import 'package:tenka_2_0_0/Model/star_model.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:tenka_2_0_0/my_flutter_app_icons.dart';
 import 'package:tenka_2_0_0/Model/memo_model.dart';
+import 'package:tenka_2_0_0/Model/memo_model.dart';
+import 'package:tenka_2_0_0/Entity/memo.dart';
 
 class DetailScreen extends StatelessWidget {
   DetailScreen({Key key}) : super(key: key);
@@ -13,6 +15,14 @@ class DetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var args = Map();
     args = ModalRoute.of(context).settings.arguments;
+
+    final memoModel = Provider.of<MemoModel>(context, listen: true);
+    // List<Memo> memo = memoModel.getMemo(args['id']);
+    List<Memo> memoList = memoModel.memoList;
+    memoModel.getMemo(args['id']);
+    // print("${memoList[0].text} detailScreen");
+
+    // print(memom[0]['text']);
 
     return Scaffold(
       appBar: _bar(context, args['id'].toString()),
@@ -24,7 +34,7 @@ class DetailScreen extends StatelessWidget {
               _table(args),
               _more(args['name']),
               _memoTitle(args['id'], context),
-              _memoCard('まだメモはありません．'),
+              _memoCard(memoList[0].text),
             ],
           ),
         ),
