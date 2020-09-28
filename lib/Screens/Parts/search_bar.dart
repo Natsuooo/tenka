@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tenka_2_0_0/Model/search_model.dart';
 import 'package:provider/provider.dart';
+import 'package:tenka_2_0_0/Model/data_model.dart';
 
 class SearchBar extends StatelessWidget {
   // final _formKey = GlobalKey<FormState>();
@@ -10,6 +11,7 @@ class SearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final searchModel = Provider.of<SearchModel>(context, listen: true);
+    final dataModel = Provider.of<DataModel>(context, listen: true);
     return SliverPersistentHeader(
       pinned: true,
       delegate: SliverHeaderDelegate(
@@ -23,6 +25,7 @@ class SearchBar extends StatelessWidget {
             child: TextField(
               onChanged: (value) {
                 searchModel.changeQuery(value);
+                // dataModel.getSearchList(value);
               },
               autofocus: false,
               // controller: editingController,

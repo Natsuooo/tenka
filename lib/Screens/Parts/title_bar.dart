@@ -27,12 +27,21 @@ class TitleBar extends StatelessWidget {
       ),
       actions: [
         Visibility(
-          child: IconButton(
-            icon: Icon(
-              Icons.more_vert,
-              color: Colors.grey[700],
-            ),
-            onPressed: () {},
+          child: PopupMenuButton(
+            itemBuilder: (BuildContext context) => <PopupMenuItem>[
+              PopupMenuItem(
+                child: Text('ヘルプ'),
+                value: 'help',
+              ),
+              PopupMenuItem(
+                child: Text('このアプリについて'),
+                value: 'about',
+              ),
+              PopupMenuItem(
+                child: Text('このアプリを評価する'),
+                value: 'evaluate',
+              ),
+            ],
           ),
           visible: this.title == 'Tenka',
         ),
