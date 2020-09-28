@@ -49,4 +49,12 @@ class DataModel with ChangeNotifier {
         .toList();
     return _starList;
   }
+
+  List<Data> _recentList = [];
+  getRecentList(List recentList) {
+    _recentList = _allDataList
+        .where((data) => recentList.contains(data.id.toString()))
+        .toList();
+    return _recentList;
+  }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tenka_2_0_0/Entity/data.dart';
 import 'package:provider/provider.dart';
 import 'package:tenka_2_0_0/Model/star_model.dart';
+import 'package:tenka_2_0_0/Model/recent_model.dart';
 
 class DataListTile extends StatelessWidget {
   final Data data;
@@ -14,8 +15,7 @@ class DataListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final starModel = Provider.of<StarModel>(context, listen: false);
-
-    List<String> starList = starModel.starList;
+    final recentModel = Provider.of<RecentModel>(context, listen: true);
 
     String _id = data.id.toString();
 
@@ -58,6 +58,7 @@ class DataListTile extends StatelessWidget {
                 shadowColor: Colors.black.withOpacity(0.3),
                 child: InkWell(
                   onTap: () async {
+                    recentModel.saveRecentList(_id);
                     await Navigator.of(context).pushNamed(
                       '/detail', //idだけ渡して検索してもいいかも．
                       arguments: {

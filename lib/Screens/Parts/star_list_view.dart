@@ -20,13 +20,6 @@ class StarListView extends StatelessWidget {
       delegate: SliverChildBuilderDelegate(
         (context, index) {
           var data = list[index];
-          // List<String> starList = starModel.starList;
-          // if (starList.contains(data.id.toString())) {
-          //   return DataListTile(data: data);
-          // } else {
-          //   return Container();
-          // }
-          // return DataListTile(data: dataModel.getStarList(starList));
           return DataListTile(data: data);
         },
         childCount: list == null ? 0 : list.length,
