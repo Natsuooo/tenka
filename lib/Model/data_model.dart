@@ -32,10 +32,18 @@ class DataModel with ChangeNotifier {
               data.name.contains(query) |
               data.katakana.contains(query) |
               data.hiragana.contains(query) |
-              data.alphabet.contains(query))
+              data.alphabet.contains(query) |
+              data.enumber.toLowerCase().contains(query) |
+              data.enumber.contains(query))
           .toList();
     }
     return _searchList;
     // notifyListeners();
+  }
+
+  List<Data> _starList = [];
+
+  getStarList(starList) {
+    _starList = _allDataList.where((data) => false);
   }
 }

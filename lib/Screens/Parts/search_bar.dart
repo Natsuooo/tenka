@@ -30,7 +30,7 @@ class SearchBar extends StatelessWidget {
               autofocus: false,
               // controller: editingController,
               decoration: InputDecoration(
-                hintText: "添加物を検索",
+                hintText: "添加物名またはE番号で検索",
                 prefixIcon: Icon(Icons.search, color: Colors.grey[700]),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(30.0)),

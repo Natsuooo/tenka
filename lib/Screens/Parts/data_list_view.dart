@@ -39,11 +39,13 @@ class DataListView extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            SizedBox(height: 60),
             Icon(
               MyFlutterApp.not_found,
               size: 60,
-              color: Colors.grey[700],
+              color: Colors.grey[500],
             ),
+            SizedBox(height: 30),
             Text(
               '"$query" は見つかりませんでした．',
             ),
@@ -62,7 +64,7 @@ class DataListView extends StatelessWidget {
                   },
                   child: Row(
                     children: [
-                      SizedBox(width: 10),
+                      SizedBox(width: 5),
                       Text('Googleで検索する'),
                       Icon(
                         CupertinoIcons.forward,
