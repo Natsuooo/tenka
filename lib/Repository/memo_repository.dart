@@ -5,6 +5,7 @@ class MemoRepository {
   final memoDao = MemoDao();
 
   Future getMemo(int id) => memoDao.getMemo(id);
+  Future getAllMemo() => memoDao.getAllMemo();
   Future insertMemo(Memo memo) => memoDao.create(memo);
   Future updateMemo(Memo memo) => memoDao.update(memo);
   Future deleteMemo(int id) => memoDao.delete(id);

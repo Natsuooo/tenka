@@ -5,6 +5,15 @@ class MemoDao {
   final dbProvider = DatabaseService.dbProvider;
   final tableName = DatabaseService.memoTableName;
 
+  Future<List<Memo>> getAllMemo() async {
+    final db = await dbProvider.database;
+    List<Map<String, dynamic>> result = await db.query(tableName);
+    List<Memo> memos = result.isNotEmpty
+        ? result.map((item) => Memo.fromDatabaseJson(item)).toList()
+        : [];
+    return memos;
+  }
+
   Future<dynamic> getMemo(int id) async {
     final db = await dbProvider.database;
     List<Map<String, dynamic>> result =
@@ -24,7 +33,7 @@ class MemoDao {
   Future<int> update(Memo memo) async {
     final db = await dbProvider.database;
     var result = await db.update(tableName, memo.toDatabaseJson(),
-        where: "data_id = ?", whereArgs: [memo.id]);
+        where: "id = ?", whereArgs: [memo.id]);
     return result;
   }
 

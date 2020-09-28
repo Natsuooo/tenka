@@ -17,12 +17,23 @@ class DetailScreen extends StatelessWidget {
     args = ModalRoute.of(context).settings.arguments;
 
     final memoModel = Provider.of<MemoModel>(context, listen: true);
+    List<Memo> allMemoList = memoModel.allMemoList;
+    print(allMemoList);
+    List<Memo> memoList =
+        allMemoList.where((item) => item.id == args['id']).toList();
+    print(memoList);
+    // List<Memo> memoList = await memoModel.getMemo(args['id']);
+    // memoModel.getMemo(args['id']);
+    // List<Memo> memoList = memoModel.memoList;
+    // print(memoList);
+    // print("${memo[0].text} allmemolist");
     // List<Memo> memo = memoModel.getMemo(args['id']);
-    List<Memo> memoList = memoModel.memoList;
-    memoModel.getMemo(args['id']);
+    // List<Memo> memoList = memoModel.memoList;
+    // memoModel.getMemo(args['id']);
     // print("${memoList[0].text} detailScreen");
 
     // print(memom[0]['text']);
+    // print(memoList);
 
     return Scaffold(
       appBar: _bar(context, args['id'].toString()),
@@ -34,7 +45,7 @@ class DetailScreen extends StatelessWidget {
               _table(args),
               _more(args['name']),
               _memoTitle(args['id'], context),
-              _memoCard(memoList[0].text),
+              _memoCard(memoList.isNotEmpty ? memoList[0].text : 'まだメモはありません．'),
             ],
           ),
         ),
@@ -271,12 +282,12 @@ class DetailScreen extends StatelessWidget {
 
   Widget _memoTitle(id, context) {
     return Container(
-      padding: EdgeInsets.only(left: 30, right: 30, top: 20),
+      padding: EdgeInsets.only(left: 30, right: 15, top: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text('Myメモ'),
-          OutlineButton.icon(
+          FlatButton.icon(
             icon: Icon(
               MyFlutterApp.edit,
               size: 20,
@@ -285,36 +296,10 @@ class DetailScreen extends StatelessWidget {
             label: Text("編集"),
             onPressed: () {
               Navigator.of(context).pushNamed('/memo', arguments: id);
-              // showDialog(
-              //     context: context,
-              //     builder: (BuildContext context) {
-              //       final memoModel =
-              //           Provider.of<MemoModel>(context, listen: true);
-              //       final memoEditingController = TextEditingController();
-              //       return SimpleDialog(
-              //         title: Text('Myメモ'),
-              //         contentPadding: EdgeInsets.all(16),
-              //         children: [
-              //           TextField(
-              //             controller: memoEditingController,
-              //             decoration: InputDecoration(
-              //                 border: OutlineInputBorder(),
-              //                 hintText: "メモを記入する"),
-              //           ),
-              //           FlatButton(
-              //             onPressed: () {
-              //               Navigator.pop(context);
-              //             },
-              //             child: Text("保存"),
-              //           ),
-              //         ],
-              //       );
-              // }
-              // );
             },
-            borderSide: BorderSide(width: 1.0, color: Colors.grey[700]),
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            // borderSide: BorderSide(width: 1.0, color: Colors.grey[700]),
+            // shape:
+            // RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           ),
         ],
       ),
