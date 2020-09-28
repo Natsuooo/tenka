@@ -43,7 +43,10 @@ class DataModel with ChangeNotifier {
 
   List<Data> _starList = [];
 
-  getStarList(starList) {
-    _starList = _allDataList.where((data) => false);
+  getStarList(List starList) {
+    _starList = _allDataList
+        .where((data) => starList.contains(data.id.toString()))
+        .toList();
+    return _starList;
   }
 }

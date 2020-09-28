@@ -28,6 +28,7 @@ class SearchBar extends StatelessWidget {
                 // dataModel.getSearchList(value);
               },
               autofocus: false,
+              cursorColor: Colors.grey[500],
               // controller: editingController,
               decoration: InputDecoration(
                 hintText: "添加物名またはE番号で検索",

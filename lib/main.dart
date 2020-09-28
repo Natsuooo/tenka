@@ -6,6 +6,7 @@ import 'package:tenka_2_0_0/Model/data_model.dart';
 import 'package:tenka_2_0_0/Model/search_model.dart';
 import 'package:tenka_2_0_0/Model/star_model.dart';
 import 'package:tenka_2_0_0/Screens/detail_screen.dart';
+import 'package:tenka_2_0_0/Model/recent_model.dart';
 
 void main() => runApp(MyApp());
 
@@ -25,7 +26,10 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider<StarModel>(
           create: (context) => StarModel(),
-        )
+        ),
+        ChangeNotifierProvider<RecentModel>(
+          create: (context) => RecentModel(),
+        ),
       ],
       child: MaterialApp(
         title: 'Tenka',
