@@ -20,7 +20,7 @@ class DataListView extends StatelessWidget {
     final searchModel = Provider.of<SearchModel>(context, listen: true);
     final dataModel = Provider.of<DataModel>(context, listen: true);
     String query = searchModel.query;
-    if (!dataModel.isLoading) {
+    if (dataModel.isLoading) {
       return SliverToBoxAdapter(
         child: Container(
           padding: EdgeInsets.only(top: 20),

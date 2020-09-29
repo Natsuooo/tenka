@@ -238,7 +238,7 @@ class DetailScreen extends StatelessWidget {
                   ),
                   Expanded(
                     flex: 3,
-                    child: Text(args['content'] * 5),
+                    child: Text(args['content']),
                   ),
                 ],
               ),
@@ -265,7 +265,7 @@ class DetailScreen extends StatelessWidget {
           },
           child: Row(
             children: [
-              SizedBox(width: 5),
+              // SizedBox(width: 5),
               Text('もっと見る'),
               Icon(
                 CupertinoIcons.forward,
