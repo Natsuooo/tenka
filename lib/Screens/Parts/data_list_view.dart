@@ -64,7 +64,7 @@ class DataListView extends StatelessWidget {
                   },
                   child: Row(
                     children: [
-                      SizedBox(width: 5),
+                      // SizedBox(width: 30),
                       Text('Googleで検索する'),
                       Icon(
                         CupertinoIcons.forward,
