@@ -30,9 +30,11 @@ class DataModel with ChangeNotifier {
       _searchList = _allDataList
           .where((data) =>
               data.name.contains(query) |
-              data.katakana.contains(query) |
+              data.katakana1.contains(query) |
+              data.katakana2.contains(query) |
               data.hiragana.contains(query) |
-              data.alphabet.contains(query) |
+              data.alphabet1.contains(query) |
+              data.alphabet2.contains(query) |
               data.enumber.toLowerCase().contains(query) |
               data.enumber.contains(query))
           .toList();

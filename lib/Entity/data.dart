@@ -1,9 +1,11 @@
 class Data {
   int id;
   String name;
-  String katakana;
+  String katakana1;
+  String katakana2;
   String hiragana;
-  String alphabet;
+  String alphabet1;
+  String alphabet2;
   String category;
   int danger;
   String enumber;
@@ -15,9 +17,11 @@ class Data {
   Data({
     this.id,
     this.name,
-    this.katakana,
+    this.katakana1,
+    this.katakana2,
     this.hiragana,
-    this.alphabet,
+    this.alphabet1,
+    this.alphabet2,
     this.category,
     this.danger,
     this.enumber,
@@ -28,9 +32,11 @@ class Data {
   factory Data.fromDatabaseJson(Map<String, dynamic> data) => Data(
         id: data['id'],
         name: data['name'],
-        katakana: data['katakana'],
+        katakana1: data['katakana1'],
+        katakana2: data['katakana2'],
         hiragana: data['hiragana'],
-        alphabet: data['alphabet'],
+        alphabet1: data['alphabet1'],
+        alphabet2: data['alphabet2'],
         category: data['category'],
         danger: data['danger'],
         enumber: data['enumber'],
