@@ -12,7 +12,6 @@ class MemoScreen extends StatelessWidget {
     final memoModel = Provider.of<MemoModel>(context, listen: true);
     var args = Map();
     args = ModalRoute.of(context).settings.arguments;
-    print(args['text']);
     String _current = '';
     _current = args['text'];
 
@@ -43,6 +42,7 @@ class MemoScreen extends StatelessWidget {
         actions: [
           FlatButton(
             onPressed: () {
+              _save();
               Navigator.of(context).pop();
             },
             child: Icon(Icons.check),

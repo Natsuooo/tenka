@@ -29,12 +29,12 @@ class HomeScreen extends StatelessWidget {
           slivers: [
             TitleBar(title: 'Tenka'),
             SearchBar(),
-            query == '' ? _subTitle('最近の検索') : SliverToBoxAdapter(),
+            // query == '' ? _subTitle('最近の検索') : SliverToBoxAdapter(),
             // RecentListView(list: recentModel.getRecentList(allDataList)),
-            query == ''
-                ? RecentListView(list: dataModel.getRecentList(recentList))
-                : SliverToBoxAdapter(),
-            query == '' ? _subTitle('全ての添加物') : SliverToBoxAdapter(),
+            // query == ''
+            //     ? RecentListView(list: dataModel.getRecentList(recentList))
+            //     : SliverToBoxAdapter(),
+            // query == '' ? _subTitle('全ての添加物') : SliverToBoxAdapter(),
             DataListView(list: dataModel.getSearchList(query)),
           ],
         ),

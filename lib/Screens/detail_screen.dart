@@ -284,7 +284,10 @@ class DetailScreen extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text('Myメモ'),
+          Text(
+            'Myメモ',
+            style: TextStyle(fontSize: 16),
+          ),
           FlatButton.icon(
             icon: Icon(
               MyFlutterApp.edit,
@@ -318,6 +321,8 @@ class DetailScreen extends StatelessWidget {
         children: [
           Expanded(
             child: Card(
+              elevation: 10,
+              shadowColor: Colors.black.withOpacity(0.3),
               child: Container(
                 padding: EdgeInsets.all(16),
                 child: Text(memo),
