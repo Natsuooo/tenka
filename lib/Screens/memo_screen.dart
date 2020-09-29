@@ -10,8 +10,19 @@ class MemoScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final memoModel = Provider.of<MemoModel>(context, listen: true);
-    final memoEditingController = TextEditingController();
-    var id = ModalRoute.of(context).settings.arguments;
+    var args = Map();
+    args = ModalRoute.of(context).settings.arguments;
+    print(args['text']);
+    String _current = '';
+    _current = args['text'];
+
+    void _save() {
+      if (args['memo_id'] == -1) {
+        memoModel.add(Memo(id: args['id'], text: _current));
+      } else {
+        memoModel.update(Memo(id: args['id'], text: _current));
+      }
+    }
 
     return Scaffold(
       appBar: AppBar(
@@ -25,7 +36,7 @@ class MemoScreen extends StatelessWidget {
             color: Colors.black,
           ),
           onPressed: () {
-            memoModel.add(Memo(id: id, text: 'テスト'));
+            _save();
             Navigator.of(context).pop();
           },
         ),
@@ -42,9 +53,11 @@ class MemoScreen extends StatelessWidget {
       body: Container(
         padding: EdgeInsets.all(16.0),
         child: TextField(
-          controller: memoEditingController,
+          controller: TextEditingController(text: _current),
           maxLines: 99,
-          onChanged: (text) {},
+          onChanged: (text) {
+            _current = text;
+          },
         ),
       ),
     );

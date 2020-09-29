@@ -18,10 +18,8 @@ class DetailScreen extends StatelessWidget {
 
     final memoModel = Provider.of<MemoModel>(context, listen: true);
     List<Memo> allMemoList = memoModel.allMemoList;
-    print(allMemoList);
     List<Memo> memoList =
         allMemoList.where((item) => item.id == args['id']).toList();
-    print(memoList);
     // List<Memo> memoList = await memoModel.getMemo(args['id']);
     // memoModel.getMemo(args['id']);
     // List<Memo> memoList = memoModel.memoList;
@@ -44,7 +42,7 @@ class DetailScreen extends StatelessWidget {
               _title(args['name'], args['danger']),
               _table(args),
               _more(args['name']),
-              _memoTitle(args['id'], context),
+              _memoTitle(args['id'], memoList, context),
               _memoCard(memoList.isNotEmpty ? memoList[0].text : 'まだメモはありません．'),
             ],
           ),
@@ -280,7 +278,7 @@ class DetailScreen extends StatelessWidget {
     );
   }
 
-  Widget _memoTitle(id, context) {
+  Widget _memoTitle(id, memoList, context) {
     return Container(
       padding: EdgeInsets.only(left: 30, right: 15, top: 20),
       child: Row(
@@ -295,7 +293,14 @@ class DetailScreen extends StatelessWidget {
             ),
             label: Text("編集"),
             onPressed: () {
-              Navigator.of(context).pushNamed('/memo', arguments: id);
+              Navigator.of(context).pushNamed('/memo',
+                  arguments: memoList.isNotEmpty
+                      ? {
+                          'id': id,
+                          'memo_id': memoList[0].id,
+                          'text': memoList[0].text
+                        }
+                      : {'id': id, 'memo_id': -1, 'text': ''});
             },
             // borderSide: BorderSide(width: 1.0, color: Colors.grey[700]),
             // shape:

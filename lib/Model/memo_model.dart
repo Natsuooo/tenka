@@ -33,8 +33,6 @@ class MemoModel with ChangeNotifier {
     // notifyListeners();
     // return _memo;
     List<Memo> _memoList = await repo.getMemo(id);
-    print(_memoList[0].text);
-    // print("$_memoList getmemo");
     return _memoList;
     // notifyListeners();
   }
@@ -47,7 +45,8 @@ class MemoModel with ChangeNotifier {
 
   void update(Memo memo) async {
     await repo.updateMemo(memo);
-    notifyListeners();
+    _fetchAll();
+    // notifyListeners();
   }
 
   void remove(Memo memo) async {
