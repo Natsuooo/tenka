@@ -16,9 +16,9 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final dataModel = Provider.of<DataModel>(context, listen: true);
     final searchModel = Provider.of<SearchModel>(context, listen: true);
-    final recentModel = Provider.of<RecentModel>(context, listen: true);
+    // final recentModel = Provider.of<RecentModel>(context, listen: true);
     String query = searchModel.query;
-    List<String> recentList = recentModel.recentList;
+    // List<String> recentList = recentModel.recentList;
     // List<Data> allDataList = dataModel.allDataList;
     if (dataModel.isInitial) {
       dataModel.firstAccess();

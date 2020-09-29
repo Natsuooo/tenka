@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:tenka_2_0_0/my_flutter_app_icons.dart';
+import 'package:tenka_2_0_0/Model/data_model.dart';
 
 class DataListView extends StatelessWidget {
   final List<Data> list;
@@ -17,7 +18,20 @@ class DataListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final searchModel = Provider.of<SearchModel>(context, listen: true);
+    final dataModel = Provider.of<DataModel>(context, listen: true);
     String query = searchModel.query;
+    if (!dataModel.isLoading) {
+      return SliverToBoxAdapter(
+        child: Container(
+          padding: EdgeInsets.only(top: 20),
+          child: Center(
+            child: CircularProgressIndicator(
+              valueColor: AlwaysStoppedAnimation<Color>(Colors.grey[500]),
+            ),
+          ),
+        ),
+      );
+    }
     if (list.isNotEmpty) {
       return SliverList(
         delegate: SliverChildBuilderDelegate(

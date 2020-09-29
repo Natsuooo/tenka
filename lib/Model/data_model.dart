@@ -7,6 +7,8 @@ class DataModel with ChangeNotifier {
   List<Data> get allDataList => _allDataList;
   bool _isInitial = true;
   bool get isInitial => _isInitial;
+  bool _isLoading = true;
+  bool get isLoading => _isLoading;
 
   final DataRepository repo = DataRepository();
 
@@ -17,6 +19,7 @@ class DataModel with ChangeNotifier {
 
   void fetchAll() async {
     _allDataList = await repo.getAllData();
+    _isLoading = false;
     notifyListeners();
   }
 
