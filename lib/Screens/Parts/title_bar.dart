@@ -42,10 +42,28 @@ class TitleBar extends StatelessWidget {
                 value: 'evaluate',
               ),
             ],
+            // onSelected: popupMenuSelected(context),
+            onSelected: (value) {
+              switch (value) {
+                case 'help':
+                  Navigator.of(context).pushNamed('/help');
+                  break;
+              }
+            },
           ),
-          visible: this.title == 'Tenka',
+          // visible: this.title == 'Tenka',
         ),
       ],
     );
   }
+
+  // void popupMenuSelected(context, value) {
+  //   switch (value) {
+  //     case 'help':
+  //       Navigator.of(context).pushNamed('/detail');
+  //       break;
+  //     default:
+  //       break;
+  //   }
+  // }
 }
