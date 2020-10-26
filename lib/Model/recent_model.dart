@@ -22,20 +22,20 @@ class RecentModel with ChangeNotifier {
       _recentList.remove(id);
     }
     _recentList.add(id);
-    if (_recentList.length > 5) {
+    if (_recentList.length > 2) {
       _recentList.removeAt(0);
     }
     repo.saveRecentList(_recentList);
     notifyListeners();
   }
 
-  // List<Data> _recentDataList = [];
+  List<Data> _recentDataList = [];
 
-  // getRecentList(List<Data> allDataList) {
-  //   _recentDataList = allDataList
-  //       .where((data) => _recentList.contains(data.id.toString()))
-  //       .toList();
-  //   print(_recentDataList);
-  //   return _recentDataList;
-  // }
+  getRecentList(List<Data> allDataList) {
+    _recentDataList = allDataList
+        .where((data) => _recentList.contains(data.id.toString()))
+        .toList();
+    print(_recentDataList);
+    return _recentDataList;
+  }
 }
