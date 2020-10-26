@@ -8,8 +8,8 @@ class Data {
   String alphabet2;
   String category;
   int danger;
-  String enumber;
   String food;
+  String note;
   String content;
 
   bool isStar = false;
@@ -24,8 +24,8 @@ class Data {
     this.alphabet2,
     this.category,
     this.danger,
-    this.enumber,
     this.food,
+    this.note,
     this.content,
   });
 
@@ -39,8 +39,8 @@ class Data {
         alphabet2: data['alphabet2'],
         category: data['category'],
         danger: data['danger'],
-        enumber: data['enumber'],
         food: data['food'],
+        note: data['note'],
         content: data['content'],
       );
 

@@ -66,8 +66,8 @@ class DataListTile extends StatelessWidget {
                         'name': data.name,
                         'category': data.category,
                         'danger': data.danger,
-                        'enumber': data.enumber,
                         'food': data.food,
+                        'note': data.note,
                         'content': data.content,
                       },
                     );

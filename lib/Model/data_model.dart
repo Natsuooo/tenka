@@ -37,9 +37,7 @@ class DataModel with ChangeNotifier {
               data.katakana2.contains(query) |
               data.hiragana.contains(query) |
               data.alphabet1.contains(query) |
-              data.alphabet2.contains(query) |
-              data.enumber.toLowerCase().contains(query) |
-              data.enumber.contains(query))
+              data.alphabet2.contains(query))
           .toList();
     }
     return _searchList;
