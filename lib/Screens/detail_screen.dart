@@ -185,7 +185,7 @@ class DetailScreen extends StatelessWidget {
                 children: [
                   Expanded(
                     flex: 1,
-                    child: Text('カテゴリ'),
+                    child: Text('用途'),
                   ),
                   Expanded(
                     flex: 3,

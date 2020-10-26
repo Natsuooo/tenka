@@ -83,14 +83,7 @@ class DataListTile extends StatelessWidget {
                           style: TextStyle(fontSize: 18),
                         ),
                       ),
-                      subtitle: Padding(
-                        padding: EdgeInsets.only(left: 5, top: 5),
-                        child: Text(
-                          data.content,
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      ),
+                      subtitle: _subtitle(),
                       trailing: Consumer<StarModel>(
                         builder: (context, starList, _) => IconButton(
                           iconSize: 28,
@@ -109,6 +102,17 @@ class DataListTile extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _subtitle() {
+    return Padding(
+      padding: EdgeInsets.only(left: 5, top: 5),
+      child: Text(
+        data.content,
+        maxLines: 1,
+        overflow: TextOverflow.ellipsis,
       ),
     );
   }
