@@ -1,4 +1,0 @@
-flutter_native_splash:
-  image: assets/images/leaf.png
-  color: "f5f5f5"
-  android_disable_fullscreen: true
