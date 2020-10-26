@@ -71,6 +71,7 @@ class DataListTile extends StatelessWidget {
                         'content': data.content,
                       },
                     );
+                    print(data.note);
                   },
                   child: Container(
                     child: ListTile(

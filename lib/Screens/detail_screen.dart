@@ -5,7 +5,6 @@ import 'package:tenka_2_0_0/Model/star_model.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:tenka_2_0_0/my_flutter_app_icons.dart';
 import 'package:tenka_2_0_0/Model/memo_model.dart';
-import 'package:tenka_2_0_0/Model/memo_model.dart';
 import 'package:tenka_2_0_0/Entity/memo.dart';
 
 class DetailScreen extends StatelessWidget {
@@ -194,22 +193,22 @@ class DetailScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              Divider(
-                height: 30,
-                thickness: 2,
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    flex: 1,
-                    child: Text('E番号'),
-                  ),
-                  Expanded(
-                    flex: 3,
-                    child: Text(args['enumber']),
-                  ),
-                ],
-              ),
+              // Divider(
+              //   height: 30,
+              //   thickness: 2,
+              // ),
+              // Row(
+              //   children: [
+              //     Expanded(
+              //       flex: 1,
+              //       child: Text('E番号'),
+              //     ),
+              //     Expanded(
+              //       flex: 3,
+              //       child: Text(args['enumber']),
+              //     ),
+              //   ],
+              // ),
               Divider(
                 height: 30,
                 thickness: 2,
@@ -239,6 +238,22 @@ class DetailScreen extends StatelessWidget {
                   Expanded(
                     flex: 3,
                     child: Text(args['content']),
+                  ),
+                ],
+              ),
+              Divider(
+                height: 30,
+                thickness: 2,
+              ),
+              Row(
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: Text('備考'),
+                  ),
+                  Expanded(
+                    flex: 3,
+                    child: Text(args['note']),
                   ),
                 ],
               ),
