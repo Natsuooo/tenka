@@ -11,6 +11,7 @@ import 'package:tenka_2_0_0/Model/memo_model.dart';
 import 'package:tenka_2_0_0/Screens/memo_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:tenka_2_0_0/Screens/help_screen.dart';
+import 'package:tenka_2_0_0/Screens/about_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -57,6 +58,7 @@ class MyApp extends StatelessWidget {
           '/detail': (context) => DetailScreen(),
           '/memo': (context) => MemoScreen(),
           '/help': (context) => HelpScreen(),
+          '/about': (context) => AboutScreen(),
         },
       ),
     );

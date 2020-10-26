@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class TitleBar extends StatelessWidget {
   final String title;
@@ -39,7 +40,7 @@ class TitleBar extends StatelessWidget {
               ),
               PopupMenuItem(
                 child: Text('このアプリを評価する'),
-                value: 'evaluate',
+                value: 'review',
               ),
             ],
             // onSelected: popupMenuSelected(context),
@@ -47,6 +48,14 @@ class TitleBar extends StatelessWidget {
               switch (value) {
                 case 'help':
                   Navigator.of(context).pushNamed('/help');
+                  break;
+                case 'about':
+                  Navigator.of(context).pushNamed('/about');
+                  break;
+                case 'review':
+                  _launchURL();
+                  break;
+                default:
                   break;
               }
             },
@@ -66,4 +75,12 @@ class TitleBar extends StatelessWidget {
   //       break;
   //   }
   // }
+
+  _launchURL() async {
+    const url =
+        'https://play.google.com/store/apps/details?id=link.mikan.mikanandroid';
+    if (await canLaunch(url)) {
+      await launch(url);
+    }
+  }
 }
