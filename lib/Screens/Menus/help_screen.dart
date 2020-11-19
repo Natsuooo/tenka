@@ -55,7 +55,7 @@ class HelpScreen extends StatelessWidget {
               SizedBox(height: 15),
               Text('□一括名表示'),
               SizedBox(height: 5),
-              Text('　一括名には＜一括名＞，一括名表示可能な添加物には一括名表示「乳化剤」などの様に備考欄に記載しています．'),
+              Text('　一括名には"＜一括名＞"，一括名表示可能な添加物には"一括名表示「乳化剤」"などの様に備考欄に記載しています．'),
               SizedBox(height: 40),
               Text(
                 '食品表示ラベルの読み方',
@@ -71,7 +71,7 @@ class HelpScreen extends StatelessWidget {
               Text('□一括名表示'),
               SizedBox(height: 5),
               Text(
-                  '　一括名表示が可能な添加物は，物質名の表示義務がなく一括名で表示可能なため，どの添加物が何種類使用されているか不明です．'),
+                  '　一括名表示が可能な添加物は，物質名（添加物名）の表示義務がなく一括名で表示可能なため，どの添加物が何種類使用されているか不明です．'),
               SizedBox(height: 10),
               Text('＜一括名表示添加物＞'),
               SizedBox(height: 5),
